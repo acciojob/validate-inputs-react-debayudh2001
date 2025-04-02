@@ -80,22 +80,22 @@ const App = () => {
         <label htmlFor="name">Name:</label>&nbsp;&nbsp;
         <input type="text" name="name" value={details.name} onChange={handleChange} />
         <br />
-        {error.name && <span className="errorMessage">{error.name}</span>}
+        <span className={error.name ? "errorMessage" : "hide"}>{error.name}</span>
         <br />
         <label htmlFor="address">Address:</label>&nbsp;&nbsp;
         <input type="text" name="address" value={details.address} onChange={handleChange} />
         <br />
-        {error.address && <span className="errorMessage">{error.address}</span>}
+        <span className={error.address ? "errorMessage" : "hide"}>{error.address}</span>
         <br />
         <label htmlFor="email">Email:</label>&nbsp;&nbsp;
         <input type="text" name="email" value={details.email} onChange={handleChange} />
         <br />
-        {error.email && <span className="errorMessage">{error.email}</span>}
+        <span className={error.email ? "errorMessage" : "hide"}>{error.email}</span>
         <br />
         <label htmlFor="mobile">Mobile:</label>&nbsp;&nbsp;
         <input type="text" name="mobile" value={details.mobile} onChange={handleChange} />
         <br />
-        {error.mobile && <span className="errorMessage">{error.mobile}</span>}
+        <span className={error.mobile ? "errorMessage" : "hide"}>{error.mobile}</span>
         <br />
         <button type="submit">Submit</button>
       </form>
