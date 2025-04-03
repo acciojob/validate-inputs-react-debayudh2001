@@ -18,7 +18,7 @@ const App = () => {
 
   function validName(str) {
     let flag = false
-    str = str.toLowerCase()
+    str = str.trim().toLowerCase()
     for (let v of str) {
       if (v == " ") {
         continue
@@ -29,11 +29,7 @@ const App = () => {
         break
       }
     }
-    if (flag) {
-      return true
-    } else {
-      return false
-    }
+    return flag
   }
 
   function formValidation() {
@@ -49,7 +45,7 @@ const App = () => {
       obj.address = "Address should not contain special characters"
       isValid = false
     } 
-    if (!email.includes('@') && !email.includes('.com')) {
+    if (!email.includes('@') || !email.includes('.com')) {
       obj.email = "Email should contain @ and .com"
       isValid = false
     }
